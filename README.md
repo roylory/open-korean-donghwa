@@ -1,4 +1,4 @@
-# Open Korean Donghwa (평범한 동화책)
+# Open Donghwa (평범한 동화책)
 
 This repository contains a growing library of **open‑source Korean storybooks** accompanied by AI‑generated illustrations.  Each story lives in its own Quarto file and can be rendered into a standalone PDF.  The project aims to provide creative, culturally resonant tales free from copyright complications.
 
