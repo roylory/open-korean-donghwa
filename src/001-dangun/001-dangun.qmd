@@ -12,45 +12,60 @@ format:
         \usepackage{xcolor}
         \usepackage{tikz}
         \usetikzlibrary{calc}
-        
-        % 페이지 전체 이미지 + 표지 제목(중상단)
+
+        % Option C
+        % - overlay 없음
+        % - 중간 회색 텍스트 (출판용)
+        % - 안전한 의사-그림자 (텍스트 2회 출력)
+
+        % 페이지 전체 이미지 + 표지 제목 (중상단)
         \newcommand{\CoverPage}[2]{%
           \thispagestyle{empty}%
           \begin{tikzpicture}[remember picture,overlay]
+            % background image
             \node[inner sep=0pt] at (current page.center) {%
               \includegraphics[width=\paperwidth,height=\paperheight]{#1}%
             };
+
+            % subtle highlight (very light, upward)
             \node[
               align=center,
               text=white,
-              font=\bfseries\fontsize{44}{52}\selectfont,
-              fill=black,
-              fill opacity=0.35,
-              text opacity=1,
-              rounded corners=8pt,
-              inner xsep=18pt,
-              inner ysep=10pt
+              opacity=0.25,
+              font=\bfseries\fontsize{44}{52}\selectfont
+            ] at ($(current page.north)+(0,-0.22\paperheight)+(0,0.6pt)$) {#2};
+
+            % main text (neutral gray)
+            \node[
+              align=center,
+              text={rgb,255:red,68;green,68;blue,68}, % #444444
+              font=\bfseries\fontsize{44}{52}\selectfont
             ] at ($(current page.north)+(0,-0.22\paperheight)$) {#2};
           \end{tikzpicture}
         }
-        
-        % 페이지 전체 이미지 + 하단 자막(중앙)
+
+        % 페이지 전체 이미지 + 하단 자막 (중앙)
         \newcommand{\ScenePage}[2]{%
           \thispagestyle{empty}%
           \begin{tikzpicture}[remember picture,overlay]
+            % background image
             \node[inner sep=0pt] at (current page.center) {%
               \includegraphics[width=\paperwidth,height=\paperheight]{#1}%
             };
+
+            % subtle highlight
             \node[
               align=center,
               text=white,
-              font=\bfseries\fontsize{26}{32}\selectfont,
-              fill=black,
-              fill opacity=0.35,
-              text opacity=1,
-              rounded corners=8pt,
-              inner xsep=16pt,
-              inner ysep=8pt
+              opacity=0.25,
+              font=\fontsize{26}{32}\selectfont
+            ] at ($(current page.south)+(0,0.10\paperheight)+(0,0.5pt)$) {#2};
+
+            % main text
+            \node[
+              align=center,
+              text={rgb,255:red,68;green,68;blue,68}, % #444444
+              font=\fontsize{26}{32}\selectfont
             ] at ($(current page.south)+(0,0.10\paperheight)$) {#2};
           \end{tikzpicture}
         }
