@@ -53,18 +53,26 @@ format:
               \includegraphics[width=\paperwidth,height=\paperheight]{#1}%
             };
 
-            % subtle highlight
+            % strong shadow
             \node[
               align=center,
-              text=white,
-              opacity=0.25,
+              text=black,
+              opacity=0.65,
               font=\fontsize{26}{32}\selectfont
-            ] at ($(current page.south)+(0,0.10\paperheight)+(0,0.5pt)$) {#2};
+            ] at ($(current page.south)+(0,0.10\paperheight)+(0,-1.4pt)$) {#2};
 
-            % main text
+            % mid shadow
             \node[
               align=center,
-              text={rgb,255:red,68;green,68;blue,68}, % #444444
+              text=black,
+              opacity=0.35,
+              font=\fontsize{26}{32}\selectfont
+            ] at ($(current page.south)+(0,0.10\paperheight)+(0,-0.7pt)$) {#2};
+
+            % main text (warm off-white)
+            \node[
+              align=center,
+              text={rgb,255:red,236;green,230;blue,216}, % #ece6d8
               font=\fontsize{26}{32}\selectfont
             ] at ($(current page.south)+(0,0.10\paperheight)$) {#2};
           \end{tikzpicture}
@@ -77,31 +85,46 @@ mainfont: "Noto Serif CJK KR"
 \CoverPage{images/cover.png}{단군 이야기}
 \newpage
 
-\ScenePage{images/scene-01.png}{아주 먼 옛날, 하늘에는 환웅이라는 임금님이 계셨어요.}
+\ScenePage{images/scene-01.png}{아주 먼 옛날, 하늘과 땅이 가까운 세상이 있었어요.}
 \newpage
 
-\ScenePage{images/scene-02.png}{환웅은 사람들을 돕고 싶어서 구름을 타고 땅으로 내려왔어요.}
+\ScenePage{images/scene-02.png}{하늘에서 내려온 환웅은 사람들의 세상을 바라보았어요.}
 \newpage
 
-\ScenePage{images/scene-03.png}{환웅은 사람들에게 농사 짓는 법과 서로 도우며 사는 마음을 알려 주었어요.}
+\ScenePage{images/scene-03.png}{세상에는 산과 강, 숲이 어우러져 평화롭게 펼쳐져 있었어요.}
 \newpage
 
-\ScenePage{images/scene-04.png}{어느 날, 곰과 호랑이가 찾아와 말했어요. “사람이 되고 싶어요.”}
+\ScenePage{images/scene-04.png}{숲속에는 곰과 호랑이가 함께 살고 있었어요.}
 \newpage
 
-\ScenePage{images/scene-05.png}{환웅은 마늘을 건네며 말했어요. “참고 기다리면 사람이 될 수 있어요.”}
+\ScenePage{images/scene-05.png}{곰과 호랑이는 사람이 되고 싶다는 마음을 품었어요.}
 \newpage
 
-\ScenePage{images/scene-06.png}{곰은 마늘을 먹고 조용히 기다렸어요. 하루하루, 꾹 참고 견뎠어요.}
+\ScenePage{images/scene-06.png}{환웅은 곰과 호랑이에게 쑥과 마늘을 주었어요.}
 \newpage
 
-\ScenePage{images/scene-07.png}{하지만 호랑이는 기다리기 힘들어 숲으로 돌아갔어요.}
+\ScenePage{images/scene-07.png}{그리고 동굴에서 조용히 견디면 사람이 될 수 있다고 말했어요.}
 \newpage
 
-\ScenePage{images/scene-08.png}{오랜 시간이 지나, 곰은 사람이 되었어요.}
+\ScenePage{images/scene-08.png}{곰과 호랑이는 어두운 동굴 속으로 들어갔어요.}
 \newpage
 
-\ScenePage{images/scene-09.png}{환웅과 곰 여자의 아기가 태어났어요.}
+\ScenePage{images/scene-09.png}{곰은 쑥과 마늘을 먹으며 끝까지 참고 기다렸어요.}
 \newpage
 
-\ScenePage{images/scene-10.png}{그 아이의 이름은 단군이에요. 사람들은 고조선이라 불렀어요.}
+\ScenePage{images/scene-10.png}{하지만 호랑이는 기다리지 못하고 동굴을 나갔어요.}
+\newpage
+
+\ScenePage{images/scene-11.png}{오랜 시간이 지나, 곰은 마침내 사람이 되었어요.}
+\newpage
+
+\ScenePage{images/scene-12.png}{사람이 된 곰은 아이를 낳았고, 그 아이의 이름은 단군이었어요.}
+\newpage
+
+\ScenePage{images/scene-13.png}{단군은 자라나며 자연과 사람을 사랑했어요.}
+\newpage
+
+\ScenePage{images/scene-14.png}{단군은 사람들을 이끌어 나라를 세웠어요.}
+\newpage
+
+\ScenePage{images/scene-15.png}{그 나라는 오래도록 평화롭게 이어졌어요.}
