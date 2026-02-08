@@ -97,13 +97,13 @@ mainfont: "Noto Serif CJK KR"
 \ScenePage{images/scene-04.png}{숲속에는 곰과 호랑이가 함께 살고 있었어요.}
 \newpage
 
-\ScenePage{images/scene-05.png}{곰과 호랑이는 사람이 되고 싶다는 마음을 품었어요.}
+\ScenePage{images/scene-05.png}{“나도 사람이 되고 싶다.”}
 \newpage
 
 \ScenePage{images/scene-06.png}{환웅은 곰과 호랑이에게 쑥과 마늘을 주었어요.}
 \newpage
 
-\ScenePage{images/scene-07.png}{그리고 동굴에서 조용히 견디면 사람이 될 수 있다고 말했어요.}
+\ScenePage{images/scene-07.png}{“이것들을 먹고 견디면 너희도 사람이 될 수 있단다.”}
 \newpage
 
 \ScenePage{images/scene-08.png}{곰과 호랑이는 어두운 동굴 속으로 들어갔어요.}
@@ -112,7 +112,7 @@ mainfont: "Noto Serif CJK KR"
 \ScenePage{images/scene-09.png}{곰은 쑥과 마늘을 먹으며 끝까지 참고 기다렸어요.}
 \newpage
 
-\ScenePage{images/scene-10.png}{하지만 호랑이는 기다리지 못하고 동굴을 나갔어요.}
+\ScenePage{images/scene-10.png}{하지만 호랑이는 먼저 떠났어요. “나는 더이상 못견디겠어!”}
 \newpage
 
 \ScenePage{images/scene-11.png}{오랜 시간이 지나, 곰은 마침내 사람이 되었어요.}
