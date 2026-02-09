@@ -1,0 +1,130 @@
+---
+title: "선녀와 나뭇꾼"
+lang: ko
+format:
+  pdf:
+    pdf-engine: xelatex
+    classoption: landscape
+    toc: false
+    include-in-header:
+      text: |
+        \usepackage{graphicx}
+        \usepackage{xcolor}
+        \usepackage{tikz}
+        \usetikzlibrary{calc}
+
+        % Option C
+        % - overlay 없음
+        % - 중간 회색 텍스트 (출판용)
+        % - 안전한 의사-그림자 (텍스트 2회 출력)
+
+        % 페이지 전체 이미지 + 표지 제목 (중상단)
+        \newcommand{\CoverPage}[2]{%
+          \thispagestyle{empty}%
+          \begin{tikzpicture}[remember picture,overlay]
+            % background image
+            \node[inner sep=0pt] at (current page.center) {%
+              \includegraphics[width=\paperwidth,height=\paperheight]{#1}%
+            };
+
+            % subtle highlight (very light, upward)
+            \node[
+              align=center,
+              text=white,
+              opacity=0.25,
+              font=\bfseries\fontsize{44}{52}\selectfont
+            ] at ($(current page.north)+(0,-0.22\paperheight)+(0,0.6pt)$) {#2};
+
+            % main text (neutral gray)
+            \node[
+              align=center,
+              text={rgb,255:red,68;green,68;blue,68}, % #444444
+              font=\bfseries\fontsize{44}{52}\selectfont
+            ] at ($(current page.north)+(0,-0.22\paperheight)$) {#2};
+          \end{tikzpicture}
+        }
+
+        % 페이지 전체 이미지 + 하단 자막 (중앙)
+        \newcommand{\ScenePage}[2]{%
+          \thispagestyle{empty}%
+          \begin{tikzpicture}[remember picture,overlay]
+            % background image
+            \node[inner sep=0pt] at (current page.center) {%
+              \includegraphics[width=\paperwidth,height=\paperheight]{#1}%
+            };
+
+            % strong shadow
+            \node[
+              align=center,
+              text=black,
+              opacity=0.65,
+              font=\fontsize{26}{32}\selectfont
+            ] at ($(current page.south)+(0,0.10\paperheight)+(0,-1.4pt)$) {#2};
+
+            % mid shadow
+            \node[
+              align=center,
+              text=black,
+              opacity=0.35,
+              font=\fontsize{26}{32}\selectfont
+            ] at ($(current page.south)+(0,0.10\paperheight)+(0,-0.7pt)$) {#2};
+
+            % main text (warm off-white)
+            \node[
+              align=center,
+              text={rgb,255:red,236;green,230;blue,216}, % #ece6d8
+              font=\fontsize{26}{32}\selectfont
+            ] at ($(current page.south)+(0,0.10\paperheight)$) {#2};
+          \end{tikzpicture}
+        }
+mainfont: "Noto Serif CJK KR"
+---
+
+\pagenumbering{gobble}
+
+\CoverPage{images/cover.png}{선녀와 나뭇꾼}
+\newpage
+
+\ScenePage{images/1.png}{깊은 산속, 나뭇꾼은 도끼를 메고 숲길을 걸어가고 있었어요.}
+\newpage
+
+\ScenePage{images/2.png}{“오늘은 나무가 잘 보이네.” 나뭇꾼은 혼잣말을 하며 산을 올랐어요.}
+\newpage
+
+\ScenePage{images/3.png}{그때 숲 안쪽에서 반짝이는 연못이 눈에 들어왔어요.}
+\newpage
+
+\ScenePage{images/4.png}{연못 위로 하늘이 열리듯, 고운 선녀들이 내려오고 있었어요.}
+\newpage
+
+\ScenePage{images/5.png}{“와… 아름다운 선녀님들이다.” 나뭇꾼은 숨을 죽이고 속삭였어요.}
+\newpage
+
+\ScenePage{images/6.png}{선녀들은 날개옷을 나무에 걸어두고 연못가로 내려왔어요.}
+\newpage
+
+\ScenePage{images/7.png}{“물 정말 맑다.” “조금만 쉬다 가자.” 선녀들은 웃으며 말했어요.}
+\newpage
+
+\ScenePage{images/8.png}{숲속에서 지켜보던 나뭇꾼은 나무에 걸린 날개옷을 바라보았어요.}
+\newpage
+
+\ScenePage{images/9.png}{“이 옷이 없으면… 하늘로 못 돌아가겠지.” 나뭇꾼은 조심스럽게 말했어요.}
+\newpage
+
+\ScenePage{images/10.png}{“어디 있지… 내 날개옷?” 선녀는 놀라며 주위를 둘러보았어요.}
+\newpage
+
+\ScenePage{images/11.png}{어쩔수 없이 두 선녀는 하늘로 올라가고, 한 선녀만 연못가에 남았어요.}
+\newpage
+
+\ScenePage{images/12.png}{나뭇꾼은 용기를 내어 말했어요. “저와 함께 지내면 안 될까요?”}
+\newpage
+
+\ScenePage{images/13.png}{선녀는 하늘로 돌아가지 못하고, 나뭇꾼과 함께 살게 되었어요.}
+\newpage
+
+\ScenePage{images/14.png}{시간이 흘러 아이가 태어나자, 나뭇꾼은 생각했어요. “이제 떠나지 않겠지.”}
+\newpage
+
+\ScenePage{images/15.png}{하지만 선녀는 조용히 하늘로 올라갔어요. “모두들 잊지 않을게.” }
