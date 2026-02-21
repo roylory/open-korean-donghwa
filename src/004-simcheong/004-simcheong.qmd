@@ -1,0 +1,130 @@
+---
+title: "심청전"
+lang: ko
+format:
+  pdf:
+    pdf-engine: xelatex
+    classoption: landscape
+    toc: false
+    include-in-header:
+      text: |
+        \usepackage{graphicx}
+        \usepackage{xcolor}
+        \usepackage{tikz}
+        \usetikzlibrary{calc}
+
+        % Option C
+        % - overlay 없음
+        % - 중간 회색 텍스트 (출판용)
+        % - 안전한 의사-그림자 (텍스트 2회 출력)
+
+        % 페이지 전체 이미지 + 표지 제목 (중상단)
+        \newcommand{\CoverPage}[2]{%
+          \thispagestyle{empty}%
+          \begin{tikzpicture}[remember picture,overlay]
+            % background image
+            \node[inner sep=0pt] at (current page.center) {%
+              \includegraphics[width=\paperwidth,height=\paperheight]{#1}%
+            };
+
+            % subtle highlight (very light, upward)
+            \node[
+              align=center,
+              text=white,
+              opacity=0.25,
+              font=\bfseries\fontsize{44}{52}\selectfont
+            ] at ($(current page.north)+(0,-0.22\paperheight)+(0,0.6pt)$) {#2};
+
+            % main text (neutral gray)
+            \node[
+              align=center,
+              text={rgb,255:red,68;green,68;blue,68}, % #444444
+              font=\bfseries\fontsize{44}{52}\selectfont
+            ] at ($(current page.north)+(0,-0.22\paperheight)$) {#2};
+          \end{tikzpicture}
+        }
+
+        % 페이지 전체 이미지 + 하단 자막 (중앙)
+        \newcommand{\ScenePage}[2]{%
+          \thispagestyle{empty}%
+          \begin{tikzpicture}[remember picture,overlay]
+            % background image
+            \node[inner sep=0pt] at (current page.center) {%
+              \includegraphics[width=\paperwidth,height=\paperheight]{#1}%
+            };
+
+            % strong shadow
+            \node[
+              align=center,
+              text=black,
+              opacity=0.65,
+              font=\fontsize{26}{32}\selectfont
+            ] at ($(current page.south)+(0,0.04\paperheight)+(0,-1.4pt)$) {#2};
+
+            % mid shadow
+            \node[
+              align=center,
+              text=black,
+              opacity=0.35,
+              font=\fontsize{26}{32}\selectfont
+            ] at ($(current page.south)+(0,0.04\paperheight)+(0,-0.7pt)$) {#2};
+
+            % main text (warm off-white)
+            \node[
+              align=center,
+              text={rgb,255:red,236;green,230;blue,216}, % #ece6d8
+              font=\fontsize{26}{32}\selectfont
+            ] at ($(current page.south)+(0,0.04\paperheight)$) {#2};
+          \end{tikzpicture}
+        }
+mainfont: "Noto Serif CJK KR"
+---
+
+\pagenumbering{gobble}
+
+\CoverPage{images/cover.png}{심청전}
+\newpage
+
+\ScenePage{images/1.png}{옛날 어느 마을에 앞을 보지 못하는 심 봉사와 딸 심청이 살고 있었어요.}
+\newpage
+
+\ScenePage{images/2.png}{심청은 아버지를 정성껏 모시며 가난하지만 따뜻한 나날을 보냈어요.}
+\newpage
+
+\ScenePage{images/3.png}{“아버지, 걱정 마세요. 제가 항상 곁에 있을게요.” 심청이 다정히 말했어요.}
+\newpage
+
+\ScenePage{images/4.png}{어느 날, 스님이 공양미 삼백 석을 올리면 눈을 뜰 수 있다고 말했어요.}
+\newpage
+
+\ScenePage{images/5.png}{심청은 아버지의 눈을 뜨게 해 드리고 싶어 마음이 무거워졌어요.}
+\newpage
+
+\ScenePage{images/6.png}{마침 바다에 제물로 갈 처녀를 찾는 상인들이 마을에 찾아왔어요.}
+\newpage
+
+\ScenePage{images/7.png}{심청은 아버지를 위해 자신을 팔기로 조용히 결심했어요.}
+\newpage
+
+\ScenePage{images/8.png}{“이 몸 하나로 아버지의 눈을 뜰 수 있다면 저는 괜찮아요.”}
+\newpage
+
+\ScenePage{images/9.png}{배는 넓은 바다로 나아가고, 심청은 하늘을 향해 마지막 인사를 드렸어요.}
+\newpage
+
+\ScenePage{images/10.png}{심청이 바다에 몸을 던지자 푸른 물결이 크게 일렁였어요.}
+\newpage
+
+\ScenePage{images/11.png}{그때 용왕이 나타나 심청을 연꽃 속 궁전으로 데려갔어요.}
+\newpage
+
+\ScenePage{images/12.png}{“너의 효심이 참으로 갸륵하구나.” 용왕이 부드럽게 말했어요.}
+\newpage
+
+\ScenePage{images/13.png}{용왕의 도움으로 심청은 다시 세상으로 올라와 황후가 되었어요.}
+\newpage
+
+\ScenePage{images/14.png}{황후가 된 심청은 맹인 잔치를 열어 아버지를 찾았어요.}
+\newpage
+
+\ScenePage{images/15.png}{기적처럼 심 봉사의 눈이 밝아지고, 아버지와 딸은 감격의 재회를 했답니다.}
